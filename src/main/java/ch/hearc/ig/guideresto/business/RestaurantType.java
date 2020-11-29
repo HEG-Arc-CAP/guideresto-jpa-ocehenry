@@ -1,13 +1,22 @@
 package ch.hearc.ig.guideresto.business;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-
+//DONE
+@Entity
+@Table(name = "TYPES_GASTRONOMIQUES")
 public class RestaurantType {
-    
+    @Id
+    @Column (name = "NUMERO")
     private Integer id;
+    @Column (name = "LIBELLE")
     private String label;
+    @Column (name = "DESCRIPTION")
     private String description;
+
+    @OneToMany
+    @JoinColumn(name ="FK_TYPE")
     private Set<Restaurant> restaurants;
 
     public RestaurantType() {

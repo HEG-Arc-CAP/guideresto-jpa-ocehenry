@@ -1,9 +1,12 @@
 package ch.hearc.ig.guideresto.business;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-
+@Entity
+@Table (name = "COMMENTAIRES")
 public class CompleteEvaluation extends Evaluation {
     
     private String comment;

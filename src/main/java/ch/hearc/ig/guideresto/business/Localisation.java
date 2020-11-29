@@ -1,8 +1,14 @@
 package ch.hearc.ig.guideresto.business;
 
+import javax.persistence.*;
+
+@Embeddable
 public class Localisation {
-    
+    @Column (name = "ADRESSE")
     private String street;
+
+    @ManyToOne
+    @JoinColumn(name ="FK_VILL")
     private City city;
 
     public Localisation() {
